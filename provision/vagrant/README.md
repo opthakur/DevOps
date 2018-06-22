@@ -22,11 +22,19 @@ delete virtualmachine: vagrant destroy
 
 
 Vagrant Export Commands:
+
 vagrant package --output newboximage
+
 vagrant box add newbox newboximage.box
+
 vagrant box list
+
 mkdir -p ~/devops/provision/vagrant/newbox
+
 cd ~/devops/provision/vagrant/newbox
+
 vagrant init newbox
+
 vagrant up && vagrant ssh
+
 vagrant halt
