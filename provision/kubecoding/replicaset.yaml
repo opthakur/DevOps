@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: nginxrs
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: Frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+          - containerPort: 80

@@ -1,0 +1,34 @@
+#Then on the master server, open up /etc/etcd/etcd.conf
+
+nano /etc/etcd/etcd.conf
+
+#inside the master server etcd.conf file make sure the following is maintained:
+
+ETCD_NAME=default
+ETCD_DATA_DIR="/var/lib/etcd/default.etcd"
+ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+ETCD_ADVERTISE_CLIENT_URLS="http://localhost:2379"
+#Save and Close the file with Ctrl+X
+#Then open up /etc/kubernetes/apiserver:
+nano /etc/kubernetes/apiserver
+
+#Make sure the following content is there inside the /etc/kubernetes/apiserver file
+
+KUBE_API_ADDRESS="--insecure-bind-address=0.0.0.0"
+KUBE_API_PORT="--insecure-port=8080"
+KUBELET_PORT="--kubelet_port=10250"
+KUBE_ETCD_SERVERS="--etcd_servers=http://127.0.0.1:2379"
+KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
+KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,ResourceQuota"
+KUBE_API_ARGS=""
+#Save and Close the file with Ctrl+X
+systemctl start etcd
+systemctl enable etcd
+systemctl start kube-apiserver
+systemctl enable kube-apiserver
+systemctl start kube-controller-manager
+systemctl enable kube-controller-manager
+systemctl start kube-scheduler
+systemctl enable kube-scheduler
+etcdctl mk /atomic.io/network/config '{"Network":"172.17.0.0/16"}'
+#At this point you can run command “kubectl get nodes” which will output an empty se

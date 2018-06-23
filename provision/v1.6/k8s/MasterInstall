@@ -1,0 +1,15 @@
+yum -y install nano wget tree
+
+setenforce 0
+
+systemctl stop firewalld
+
+systemctl disable firewalld
+
+yum -y install ntp
+
+systemctl start ntpd
+
+systemctl enable ntpd
+
+yum -y install etcd kubernetes
