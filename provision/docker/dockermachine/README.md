@@ -118,3 +118,18 @@ docker run -it fedora-httpd bash
 
 #exit
 
+# Dockerfile based Build
+
+cd dockerbuildexample
+
+sudo docker build -t mynginx .
+
+docker images
+
+docker run -d mynginx
+
+docker ps
+
+
+
+
