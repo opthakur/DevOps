@@ -27,3 +27,4 @@ vagrant up && vagrant halt
 cd ../ubuntu
 vagrant init ubuntu/xenial64
 vagrant up && vagrant halt
+echo "Lab Setup Complete"
