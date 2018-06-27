@@ -1,0 +1,14 @@
+{
+  "name": "fullstackpuppet-ntp",
+  "version": "0.1.0",
+  "author": "fullstackpuppet",
+  "summary": "Manages NTP on linux machines.",
+  "license": "Apache 2.0",
+  "source": "https://github.com/fullstack-puppet/fullstackpuppet-ntp.git",
+  "project_page": "https://github.com/fullstack-puppet/fullstackpuppet-ntp",
+  "issues_url": "https://github.com/fullstack-puppet/fullstackpuppet-ntp/issues",
+  "dependencies": [
+    {"version_requirement":">= 1.0.0","name":"puppetlabs-stdlib"}
+  ]
+}
+

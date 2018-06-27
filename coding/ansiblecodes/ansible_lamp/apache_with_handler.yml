@@ -1,0 +1,15 @@
+---
+ - hosts: web1
+   become: true
+   tasks:
+    - name: Install apache2
+      apt: pkg=apache2 state=installed  update_cache=true
+    - name: coping using contnet
+      copy:
+        content: "Hello Earth"
+        dest: /var/www/html/index.html
+      notify: start apache2 service
+
+   handlers:
+    - name: start apache2 service
+      service: name=apache2 state=restart

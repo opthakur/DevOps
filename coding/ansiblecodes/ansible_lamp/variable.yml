@@ -1,0 +1,8 @@
+---
+- hosts: all 
+  become: true 
+  vars: 
+    package: firefox
+  tasks:
+   - name: Install Package 
+     apt: name={{ package }} state=latest

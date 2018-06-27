@@ -1,0 +1,5 @@
+---
+# vars file for php
+package1: php5
+package2: php5-mysql
+

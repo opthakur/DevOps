@@ -1,0 +1,6 @@
+---
+ - hosts: all 
+   become: true 
+   tasks:
+    - name: Install Git 
+      apt: pkg=git state=present update_cache=true

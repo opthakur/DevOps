@@ -1,0 +1,7 @@
+---
+ - hosts: db1
+   become: true
+   roles: 
+    - apache
+    - mysql
+    - php

@@ -1,0 +1,12 @@
+---
+ - hosts: web1
+   become: true
+   tasks: 
+    - name: create file on remote vms
+      copy:
+       dest: "{{ item }}"
+       content: "Hello world!"    
+      with_items:
+       - "/var/file1"
+       - "/var/file2"
+       - "/var/file3"  

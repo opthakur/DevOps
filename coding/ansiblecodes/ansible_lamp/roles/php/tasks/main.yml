@@ -1,0 +1,7 @@
+---
+# tasks file for php
+ - name: Install php
+   apt: pkg={{ item }} state=installed  update_cache=true
+   with_items:
+    - "{{ package1 }}"
+    - "{{ package2 }}"

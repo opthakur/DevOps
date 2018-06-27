@@ -1,0 +1,16 @@
+---
+ - hosts: web1
+   become: true 
+   vars:
+     pkg_name: apache2
+     dest_folder: /var/www/html/index.html
+     web_cont: 'Hello World' 
+   tasks:
+    - name: Install Apache 
+      apt: pkg={{ pkg_name }} state=installed update_cache=true
+    - name: Copy using the 'content' for inline data
+      copy:
+         content: "{{ web_cont }}"
+         dest: "{{ dest_folder }}"
+    - name: Ensure apache2 Service
+      service: name={{ pkg_name }} state=started

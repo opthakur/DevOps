@@ -1,0 +1,4 @@
+---
+# handlers file for apache
+ - name: start apache2 service
+   service: name={{ package }} state=restarted

@@ -1,0 +1,10 @@
+---
+ - hosts: all 
+   become: true 
+   tasks:
+    - name: Install Packages 
+      apt: name={{ item }} state=latest 
+      with_items:
+       - leafpad
+       - mousepad
+       - geany

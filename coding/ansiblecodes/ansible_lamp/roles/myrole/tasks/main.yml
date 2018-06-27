@@ -1,0 +1,9 @@
+---
+# tasks file for myrole
+ - name: Install nginx
+   apt: pkg={{ package }} state=installed  update_cache=true
+ - name: coping using contnet
+   template:
+     src: index.j2
+     dest: /usr/share/nginx/html/index.html
+   notify: start nginx service

@@ -1,0 +1,9 @@
+---
+# tasks file for apachea
+ - name: Install Apache
+   apt: pkg={{ package }} state=installed  update_cache=true
+ - name: coping using contnet
+   copy:
+     src: index.html
+     dest: /var/www/html/
+   notify: start apache2 service

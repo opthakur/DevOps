@@ -1,0 +1,7 @@
+---
+# tasks file for mysql
+ - name: Install mysql
+   apt: pkg={{ package }} state=installed  update_cache=true
+ - name:
+   service: name={{ service }} state=started
+

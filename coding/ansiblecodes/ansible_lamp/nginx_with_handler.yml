@@ -1,0 +1,15 @@
+---
+ - hosts: db1
+   become: true
+   tasks:
+    - name: Install nginx
+      apt: pkg=nginx state=installed  update_cache=true
+    - name: coping using contnet
+      copy:
+        content: "Hello nginx"
+        dest: /usr/share/nginx/html/index.html
+      notify: start nginx service
+
+   handlers:
+    - name: start nginx service
+      service: name=nginx state=restarted

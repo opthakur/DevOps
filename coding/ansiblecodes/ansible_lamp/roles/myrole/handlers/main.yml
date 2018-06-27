@@ -1,0 +1,4 @@
+---
+# handlers file for myrole
+ - name: start nginx service
+   service: name={{ package }} state=restarted

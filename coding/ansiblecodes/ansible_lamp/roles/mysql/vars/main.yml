@@ -1,0 +1,4 @@
+---
+# vars file for mysql
+package: mysql-server
+service: mysql

@@ -1,0 +1,11 @@
+---
+ - hosts: web1
+   become: true
+   vars:
+     run: "yes"
+   tasks:
+    - name: Execute when yes
+      #command: apt-get install links
+      apt:
+        name=tree state=present
+      when: run == "yes"
