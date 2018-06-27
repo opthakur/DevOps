@@ -6,16 +6,12 @@ For Tomcat, use CentOS 7
 In CentOS 7, wget is not there by default. So first you need to do "yum install -y wget" and then download this script using wget
 
 # tomcat 8
-#deploy under "path" context path
-curl --upload-file appplication-0.1-1.war "http://tomcat:tomcat@localhost:8080/manager/deploy?path=/application-0.1-1
-#undeploy
-curl "http://tomcat:tomcat@localhost:8080/manager/undeploy?path=/application-0.1-1"
+curl "http://admin:admin@192.168.33.30:8080/manager/undeploy?path=/dev"
+curl --upload-file target/javaee7-simple-sample.war "http://admin:admin@192.168.33.30:8080/manager/deploy?path=/dev"
 
 # tomcat 7
-#deploy under "path" context path
-curl --upload-file appplication-0.1-1.war "http://tomcat:tomcat@localhost:8080/manager/text/deploy?path=/application-0.1-1
-#undeploy
-curl "http://tomcat:tomcat@localhost:8080/manager/text/undeploy?path=/application-0.1-1"
+curl "http://admin:admin@192.168.33.30:8080/manager/text/undeploy?path=/dev"
+curl --upload-file target/javaee7-simple-sample.war "http://admin:admin@192.168.33.30:8080/manager/text/deploy?path=/dev"
 
 #tomcat7 uses /manager/text/undeploy and /manager/text/deploy paths
 
