@@ -1,4 +1,4 @@
-yum install cockpit cockpit-kubernetes
+yum install -y cockpit cockpit-kubernetes
 systemctl enable cockpit.socket
 systemctl start cockpit.socket
 # And browse to cockpit UI -> https://server_ip:9090
