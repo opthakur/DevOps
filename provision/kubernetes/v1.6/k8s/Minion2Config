@@ -11,8 +11,8 @@ nano /etc/kubernetes/kubelet
 KUBELET_ADDRESS="--address=0.0.0.0"
 KUBELET_PORT="--port=10250"
 # change the hostname to this host’s IP address
-KUBELET_HOSTNAME="--hostname_override=192.168.33.30"
-KUBELET_API_SERVER="--api_servers=http://192.168.33.10:8080"
+KUBELET_HOSTNAME="--hostname-override=192.168.33.30"
+KUBELET_API_SERVER="--api-servers=http://192.168.33.10:8080"
 KUBELET_ARGS=""
 #Save and Close the file with Ctrl+X
 systemctl start kube-proxy
