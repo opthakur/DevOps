@@ -1,0 +1,25 @@
+nano /etc/sysconfig/flanneld
+# Make sure the content is compliant to as mentioned below
+FLANNEL_ETCD_ENDPOINTS="http://KUBEMASTERIP:2379"
+#Save and Close the file with Ctrl+X
+nano /etc/kubernetes/config
+# Make sure the content is compliant to as mentioned below
+KUBE_MASTER="--master=http://KUBEMASTERIP:8080"
+#Save and Close the file with Ctrl+X
+nano /etc/kubernetes/kubelet
+# Make sure the content is compliant to as mentioned below
+KUBELET_ADDRESS="--address=0.0.0.0"
+KUBELET_PORT="--port=10250"
+# change the hostname to this host’s IP address
+KUBELET_HOSTNAME="--hostname_override=CURRENTMINIONIP"
+KUBELET_API_SERVER="--api_servers=http://KUBEMASTERIP:8080"
+KUBELET_ARGS=""
+#Save and Close the file with Ctrl+X
+systemctl start kube-proxy
+systemctl enable kube-proxy
+systemctl start kubelet
+systemctl enable kubelet
+systemctl restart docker
+systemctl enable docker
+systemctl start flanneld
+systemctl enable flanneld
