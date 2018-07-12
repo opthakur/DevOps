@@ -8,5 +8,5 @@
       copy:
          content: 'Hello World'
          dest: /var/www/html/index.html
-#    - name: Ensure apache2 Service
-#      service: name=apache2 state=started
+    - name: Ensure apache2 Service
+      service: name=apache2 state=started
