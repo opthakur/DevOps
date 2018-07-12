@@ -1,3 +1,3 @@
 #!/bin/bash
 knife ssl fetch
-knife bootstrap 123.45.6.789 -x username -P password --sudo -N node1
+knife bootstrap 192.168.33.12 -x vagrant -P vagrant --sudo -N node1
