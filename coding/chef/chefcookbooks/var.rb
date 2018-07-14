@@ -1,5 +1,5 @@
-package  = "vim"
+pkgname  = "vim"
 
-apt_package package do
+package pkgname do
  action :install
 end
