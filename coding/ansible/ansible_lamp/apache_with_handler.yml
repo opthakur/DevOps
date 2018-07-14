@@ -12,4 +12,4 @@
 
    handlers:
     - name: start apache2 service
-      service: name=apache2 state=restart
+      service: name=apache2 state=restarted
