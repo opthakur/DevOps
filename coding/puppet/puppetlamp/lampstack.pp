@@ -25,7 +25,7 @@ service { 'mysql':
 }
 
 # install php5 package
-package { 'php5':
+package { 'php':
   ensure => installed,
 }
 
