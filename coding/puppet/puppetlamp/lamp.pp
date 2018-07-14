@@ -12,6 +12,7 @@ package { 'apache2':
 # ensure apache2 service is running
 service { 'apache2':
   ensure => running,
+  require => Package['apache2'],
 }
 
 # install mysql-server package
@@ -25,8 +26,8 @@ service { 'mysql':
   ensure => running,
 }
 
-# install php5 package
-package { 'php5':
+# install php package
+package { 'php':
   require => Exec['apt-update'],        # require 'apt-update' before installing
   ensure => installed,
 }
