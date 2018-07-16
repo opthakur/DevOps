@@ -14,5 +14,5 @@
          dest: "{{ dest_folder }}"
       notify: start apache2 service
    handlers:
-    - name: start apache2 Service
+    - name: start apache2 service
       service: name={{ pkg_name }} state=started
