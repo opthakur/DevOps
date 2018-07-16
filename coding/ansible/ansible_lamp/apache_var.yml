@@ -12,5 +12,7 @@
       copy:
          content: "{{ web_cont }}"
          dest: "{{ dest_folder }}"
-    - name: Ensure apache2 Service
+      notify: start apache2 service
+   handlers:
+    - name: start apache2 Service
       service: name={{ pkg_name }} state=started
