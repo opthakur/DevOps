@@ -1,9 +1,8 @@
-$binaries = ['facter', 'hiera', 'mco', 'puppet', 'puppetserver']
+$filenames = ['file1', 'file2', 'file3', 'file4', 'file5']
 
 # function call with lambda:
-$binaries.each |String $binary| {
-  file {"/usr/bin/${binary}":
-    ensure => link,
-    target => "/opt/puppetlabs/bin/${binary}",
+$filenames.each |String $file| {
+  file {"/tmp/${file}":
+    ensure => present,
   }
 }
