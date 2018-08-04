@@ -1,6 +1,8 @@
 # puppetenterprise
 
-Direct Download: https://s3.amazonaws.com/pe-builds/released/2017.2.4/puppet-enterprise-2017.2.4-ubuntu-14.04-amd64.tar.gz
+Direct Download: 
+For Ubuntu/Trusty64: https://s3.amazonaws.com/pe-builds/released/2017.2.4/puppet-enterprise-2017.2.4-ubuntu-14.04-amd64.tar.gz
+For Ubuntu/Xenial: https://s3.amazonaws.com/pe-builds/released/2018.1.3/puppet-enterprise-2018.1.3-ubuntu-16.04-amd64.tar.gz
 
 Download this Vagrantfile: wget https://raw.githubusercontent.com/roybhaskar9/puppetenterprise/master/Vagrantfile
 
