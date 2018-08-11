@@ -6,6 +6,7 @@ nano /etc/kubernetes/config
 # Make sure the content is compliant to as mentioned below
 KUBE_MASTER="--master=http://192.168.33.10:8080"
 #Save and Close the file with Ctrl+X
+sed '17d' /etc/kubernetes/kubelet
 nano /etc/kubernetes/kubelet
 # Make sure the content is compliant to as mentioned below
 KUBELET_ADDRESS="--address=0.0.0.0"
@@ -15,6 +16,7 @@ KUBELET_HOSTNAME="--hostname-override=192.168.33.20"
 KUBELET_API_SERVER="--api-servers=http://192.168.33.10:8080"
 KUBELET_ARGS=""
 #Save and Close the file with Ctrl+X
+sed '17d' /etc/kubernetes/kubelet
 systemctl start kube-proxy
 systemctl enable kube-proxy
 systemctl start kubelet
