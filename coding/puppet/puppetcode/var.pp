@@ -1,2 +1,2 @@
-$content = 'some content\n' 
+$content = "some content\n"
 file { '/tmp/testing': content => $content } 
