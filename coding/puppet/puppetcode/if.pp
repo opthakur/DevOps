@@ -1,5 +1,7 @@
-if $Filename { 
-   file { '/some/file': ensure => present } 
+$var1="hello"
+
+if $var1=="hello" { 
+   file { '/tmp/hello': ensure => present } 
 } else { 
-   file { '/some/other/file': ensure => present } 
+   file { '/tmp/bye': ensure => present } 
 } 
