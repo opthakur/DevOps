@@ -7,3 +7,6 @@ dpkg -i chef-manage*.deb
 #chef-server-ctl install chef-manage
 chef-server-ctl reconfigure
 chef-manage-ctl reconfigure --accept-license
+cd /etc
+mv hosts hosts.bak
+https://gitlab.com/roybhaskar9/devops/raw/master/coding/chef/hosts
