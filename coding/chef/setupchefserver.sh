@@ -6,4 +6,4 @@ wget https://packages.chef.io/files/stable/chef-manage/2.5.16/ubuntu/16.04/chef-
 dpkg -i chef-manage*.deb
 #chef-server-ctl install chef-manage
 chef-server-ctl reconfigure
-chef-manage-ctl reconfigure
+chef-manage-ctl reconfigure --accept-license
