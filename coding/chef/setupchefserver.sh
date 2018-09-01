@@ -11,3 +11,5 @@ dpkg -i chef-manage*.deb
 # chef-server-ctl install chef-manage
 chef-server-ctl reconfigure
 chef-manage-ctl reconfigure --accept-license
+echo "Chef Server installation is complete. Now go to https://192.168.33.10 and login with username: chefuser and password: chefuser123"
+echo "Download and move the starter kit zip file to the Vagrant directory"
