@@ -1,0 +1,4 @@
+127.0.0.1  localhost.localdomain  localhost
+192.168.33.10  chefserver.example.com  chefserver
+192.168.33.11  chefnode.example.com  chefnode
+192.168.33.12  chefworkstation.example.com  chefworkstation
