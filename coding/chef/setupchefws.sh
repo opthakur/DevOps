@@ -3,3 +3,10 @@ dpkg -i chefdk*.deb
 cd /etc
 mv hosts hosts.bak
 https://gitlab.com/roybhaskar9/devops/raw/master/coding/chef/hosts
+cd ~
+cp /vagrant/chef-starter.zip .
+apt install -y unzip
+unzip chef-starter.zip
+cd chef-repo
+knife ssl fetch
+knife client list
