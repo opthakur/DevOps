@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
       vb.cpus = "2"
     end
     puppetserver.disksize.size = '120GB'
+    #vagrant plugin install vagrant-disksize
 	puppetserver.vm.provision "shell", inline: <<-SHELL
      echo "enabling password authentication for root user as per xenial configuration"
      sudo sed -i '28s/prohibit-password/yes/' /etc/ssh/sshd_config
