@@ -1,8 +1,8 @@
 ---
- - hosts: web1
+ - hosts: all
    become: true 
    tasks:
-    - name: Copy using the 'content' for inline data
+    - name: Hello World
       copy:
          content: 'Hello World'
          dest: /var/hello.txt
