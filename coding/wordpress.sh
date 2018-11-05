@@ -14,3 +14,4 @@ wget https://gitlab.com/roybhaskar9/devops/raw/master/coding/chef/chefwordpress/
 sudo cp wp-config-sample.php /var/www/html/wordpress/wp-config.php
 sudo chmod -R 775 /var/www/html/wordpress
 sudo chown -R www-data:www-data /var/www/html/wordpress
+sudo service apache2 restart
