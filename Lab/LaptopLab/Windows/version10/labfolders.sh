@@ -9,7 +9,7 @@ cd release
 mkdir git gitlab jenkins tomcat nagios
 cd ..
 cd coding
-mkdir puppet chef ansible
+mkdir puppet chef ansible terraform
 cd puppet
 mkdir puppetserver puppetnode
 cd ..
