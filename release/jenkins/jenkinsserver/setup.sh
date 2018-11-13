@@ -3,7 +3,7 @@ wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 sudo dpkg -i puppetlabs-release-pc1-xenial.deb
 sudo apt-get update
 sudo apt-get install -y puppet-agent git
-siudo ln -s /opt/puppetlabs/bin/puppet /usr/bin/puppet
+sudo ln -s /opt/puppetlabs/bin/puppet /usr/bin/puppet
 sudo puppet module install rtyler-jenkins
 sudo puppet module install hubspot-nexus
 sudo puppet module install maestrodev-sonarqube
