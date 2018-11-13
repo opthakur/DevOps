@@ -7,9 +7,9 @@ sudo ln -s /opt/puppetlabs/bin/puppet /usr/bin/puppet
 sudo puppet module install rtyler-jenkins
 sudo puppet module install hubspot-nexus
 sudo puppet module install maestrodev-sonarqube
-wget https://raw.githubusercontent.com/roybhaskar9/jenkins/master/jenkins.pp
-wget https://raw.githubusercontent.com/roybhaskar9/jenkins/master/nexus.pp
-wget https://raw.githubusercontent.com/roybhaskar9/jenkins/master/sonar.pp
+wget https://gitlab.com/roybhaskar9/devops/raw/master/release/jenkins/jenkinsserver/jenkins.pp
+wget https://gitlab.com/roybhaskar9/devops/raw/master/release/jenkins/jenkinsserver/nexus.pp
+wget https://gitlab.com/roybhaskar9/devops/raw/master/release/jenkins/jenkinsserver/sonar.pp
 sudo puppet apply jenkins.pp
 sudo apt-get install -y maven
 sudo puppet apply nexus.pp
