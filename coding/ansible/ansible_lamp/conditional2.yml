@@ -5,7 +5,5 @@
      run: "yes"
    tasks:
     - name: Execute when yes
-      #command: apt-get install links
-      apt:
-        name=tree state=present
+      command: apt-get install links
       when: run == "yes"
