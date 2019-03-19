@@ -24,7 +24,7 @@ echo "Lets see if it is there"
 ls -l /vagrant
 if [ -f "$file" ];
 then
-    echo "File $FILE exists."
+    echo "File $file exists."
     echo "Lets copy the file to home directory"
     cp /vagrant/chef-starter.zip ~
     echo "Lets install unzip"
@@ -43,6 +43,6 @@ then
     knife client list
     echo "If you get to see a response as chef-validator then your workstation setup is now complete"
 else
-    echo "File $FILE does not exist"
+    echo "File $file does not exist"
     echo "Download chef starter kit after logging in to the chef server and move it in the same folder where you have kept the Vagrantfile"
 fi
