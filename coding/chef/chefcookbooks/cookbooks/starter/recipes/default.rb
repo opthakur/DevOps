@@ -17,12 +17,14 @@ end
 cookbook_file "/tmp/sample.txt" do
   source "sample.txt"
 end
-cookbook_file "/var/www/html/index.html" do
-   source "index.html"
+template "/var/www/html/index.html" do
+   source "sample.erb"
 end
 execute 'sample_execution' do
    command 'wget google.com -O /tmp/index.html'
    not_if {File.exists?("/tmp/index.html")}
 end
+
+
 
 # For more information, see the documentation: https://docs.chef.io/essentials_cookbook_recipes.html
