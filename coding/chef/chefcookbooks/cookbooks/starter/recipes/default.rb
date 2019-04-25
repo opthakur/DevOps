@@ -19,6 +19,7 @@ cookbook_file "/tmp/example.txt" do
 end
 template "/var/www/html/index.html" do
    source "sample.erb"
+   variables :hostname => node["fqdn"], :codewords => ["alpha","bravo","charlie"]
 end
 execute 'sample_execution' do
    command 'wget google.com -O /tmp/index.html'
