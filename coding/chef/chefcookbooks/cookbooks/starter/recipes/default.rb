@@ -14,7 +14,7 @@ remote_file "wordpress_latest" do
     source 'http://wordpress.org/latest.tar.gz'
     path "/tmp/latest.tar.gz"
 end
-cookbook_file "/tmp/sample.txt" do
+cookbook_file "/tmp/example.txt" do
   source "sample.txt"
 end
 template "/var/www/html/index.html" do
