@@ -16,6 +16,6 @@ bash
 
 cd ~
 
-curl -sSL https://raw.githubusercontent.com/roybhaskar9/files/master/setupvagrant.sh | bash
+curl -sSL https://gitlab.com/roybhaskar9/devops/raw/master/Lab/LaptopLab/Windows/version10/s9vagrantsetup.sh | bash
 
 curl -sSL https://gitlab.com/roybhaskar9/devops/raw/master/Lab/LaptopLab/Windows/version10/labfolders.sh | bash
