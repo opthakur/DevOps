@@ -1,0 +1,35 @@
+Vagrant.configure(2) do |config|
+
+  config.vm.define "puppetworkstation" do |puppetworkstation|
+    puppetworkstation.vm.box = "ubuntu/xenial64"
+    puppetworkstation.vm.hostname = "puppetworkstation.example.com"
+    puppetworkstation.vm.network "private_network",ip:"192.168.33.12"
+    puppetworkstation.vm.provider :virtualbox do |vb|
+      vb.memory = "512"
+      vb.cpus = "1"
+    end
+	puppetworkstation.vm.provision "shell", inline: <<-SHELL
+     wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
+	 sudo dpkg -i puppet5-release-xenial.deb
+	 sudo apt-get update
+	 sudo apt-get -y install puppet-agent
+	 sudo ln -s /opt/puppetlabs/bin/puppet /usr/bin/puppet
+	SHELL
+  end
+  config.vm.define "puppetnode1" do |puppetnode1|
+    puppetnode1.vm.box = "ubuntu/xenial64"
+    puppetnode1.vm.hostname = "puppetnode1.example.com"
+    puppetnode1.vm.network "private_network",ip:"192.168.33.12"
+    puppetnode1.vm.provider :virtualbox do |vb|
+      vb.memory = "512"
+      vb.cpus = "1"
+    end
+	puppetnode1.vm.provision "shell", inline: <<-SHELL
+     wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
+	 sudo dpkg -i puppet5-release-xenial.deb
+	 sudo apt-get update
+	 sudo apt-get -y install puppet-agent
+	 sudo ln -s /opt/puppetlabs/bin/puppet /usr/bin/puppet
+	SHELL
+  end
+end
