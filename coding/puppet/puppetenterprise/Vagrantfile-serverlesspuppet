@@ -3,7 +3,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "puppetworkstation" do |puppetworkstation|
     puppetworkstation.vm.box = "ubuntu/xenial64"
     puppetworkstation.vm.hostname = "puppetworkstation.example.com"
-    puppetworkstation.vm.network "private_network",ip:"192.168.33.12"
+    puppetworkstation.vm.network "private_network",ip:"192.168.33.20"
     puppetworkstation.vm.provider :virtualbox do |vb|
       vb.memory = "512"
       vb.cpus = "1"
@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "puppetnode1" do |puppetnode1|
     puppetnode1.vm.box = "ubuntu/xenial64"
     puppetnode1.vm.hostname = "puppetnode1.example.com"
-    puppetnode1.vm.network "private_network",ip:"192.168.33.12"
+    puppetnode1.vm.network "private_network",ip:"192.168.33.30"
     puppetnode1.vm.provider :virtualbox do |vb|
       vb.memory = "512"
       vb.cpus = "1"
