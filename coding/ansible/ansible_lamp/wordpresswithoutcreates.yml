@@ -1,0 +1,48 @@
+---
+ - hosts: all
+   become: true
+   tasks:
+    - name: run apt update
+      command: apt update
+    - name: install apache2
+      apt: pkg=apache2 state=present update_cache=true
+    - name: Start the  Service
+      service: name=apache2 state=started
+    - name: Install dependencies
+      apt: name={{ item }} state=present
+      with_items:
+        - mysql-server
+        - mysql-client
+        - libapache2-mod-php
+        - php-mcrypt
+        - php-mysql
+    - name: mysql command execution
+      command: mysqladmin -u root password Welcome123
+    - name: Download mysqlcommands file
+      get_url:
+        url: https://gitlab.com/roybhaskar9/devops/raw/master/coding/chef/chefwordpress/files/default/mysqlcommands
+        dest: /tmp/mysqlcommands
+    - name: mysql command execution
+      shell: mysql -uroot -pWelcome123 < /tmp/mysqlcommands
+    - name: Download wordpress file
+      get_url:
+        url: https://wordpress.org/latest.zip
+        dest: /tmp/latest.zip
+    - name: Install dependencies
+      command: apt install -y unzip
+
+    - name: Extract WordPress
+      unarchive: src=/tmp/latest.zip dest=/var/www/html remote_src=yes
+    - name: get config file
+      get_url:
+        url: https://gitlab.com/roybhaskar9/devops/raw/master/coding/chef/chefwordpress/files/default/wp-config-sample.php
+        dest: /var/www/html/wordpress/wp-config.php
+    - name: Create directory wordpress
+      file:
+        path: /var/www/html/wordpress
+        state: directory
+        mode: 0755
+        owner: www-data
+        group: www-data
+    - name: restart apache
+      service: name=apache2 state=restarted
