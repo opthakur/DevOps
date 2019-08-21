@@ -10,7 +10,7 @@ spec:
     - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/mysql
+    path: /mnt/data
     
 ---
 kind: PersistentVolumeClaim
