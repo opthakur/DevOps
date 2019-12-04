@@ -1,7 +1,7 @@
 #sudo useradd sammy
 #sudo usermod --append --groups lxd sammy
 sudo apt-get update
-sudo apt-get install zfsutils-linux lynx
+sudo apt-get install -y zfsutils-linux lynx
 sudo lxd init
 # Select all default values, say no to ipv6
 #sudo su sammy
