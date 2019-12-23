@@ -22,6 +22,10 @@ kubectl edit deployment.v1.apps/nginxdeployment
 
 kubectl rollout undo deployment.v1.apps/nginxdeployment
 
+kubectl rollout status deployment.v1.apps/nginxdeployment
+
+kubectl edit deployment.v1.apps/nginxdeployment
+
 
 # Difference between Create and Apply
 
