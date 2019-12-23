@@ -8,6 +8,21 @@ For Updates:
 
 kubectl apply -f pod.yaml
 
+# Deployment
+
+https://gitlab.com/roybhaskar9/devops/raw/master/provision/kubernetes/kubecoding/deployment.yaml
+
+kubectl create -f deployment.yaml
+
+kubectl set image deployment/nginxdeployment nginx=nginx:1.9.1 --record
+
+kubectl rollout status deployment.v1.apps/nginxdeployment
+
+kubectl edit deployment.v1.apps/nginxdeployment
+
+kubectl rollout undo deployment.v1.apps/nginxdeployment
+
+
 # Difference between Create and Apply
 
 Create: It first deletes the resources and then creates it from the file provided.
