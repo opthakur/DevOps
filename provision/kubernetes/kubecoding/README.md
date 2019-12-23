@@ -1,5 +1,11 @@
 # How to run Kubernetes Codes
 
+For First Time:
+
+kubectl create -f pod.yaml
+
+For Updates:
+
 kubectl apply -f pod.yaml
 
 # Difference between Create and Apply
