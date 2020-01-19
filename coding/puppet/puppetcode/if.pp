@@ -1,7 +1,10 @@
-$var1 = "hello"
+$x = "Hell"
+if $x == "Hello" {
+file {"/tmp/hello":
+ensure => present,
+}}
+else {
+file {"/tmp/nothello":
+ensure => present,
+}}
 
-if $var1 == "hello" { 
-   file { '/tmp/hello': ensure => present } 
-} else { 
-   file { '/tmp/bye': ensure => present } 
-} 
